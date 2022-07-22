@@ -14,7 +14,7 @@ const TagsInput = (props) => {
         else if(tags.length >= props.maxTagCount){
             setError("You can't add more tags");
         }
-        else if(e.target.value === "" && e.key === "Enter"){
+        else if(e.target.value == "" && e.key === "Enter"){
             setError("The tag should be one character long!");
         }
     } 
@@ -30,7 +30,7 @@ const TagsInput = (props) => {
 
     //Remove tags by the Backspace key
     const deleteTags = (event) => {
-        if (event.key === "Backspace" && tags.length && event.target.value === 0){
+        if (event.key === "Backspace" && tags.length && event.target.value == 0){
             const tagsCopy = [...tags];
             tagsCopy.pop();
             event.preventDefault();
@@ -78,7 +78,7 @@ const TagsInput = (props) => {
                 placeholder="Press enter to add tags"
             />
         </div>
-
+        
         <div className="error">
             {error}
         </div>
